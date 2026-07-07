@@ -1,0 +1,10 @@
+{
+  "name": "阅读回访书架",
+  "short_name": "阅读书架",
+  "description": "统一保存阅读回访、知识卡和主题索引的个人阅读书架。",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3efe6",
+  "theme_color": "#7e2d25",
+  "lang": "zh-CN"
+}

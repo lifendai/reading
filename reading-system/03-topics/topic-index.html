@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="阅读回访与知识调用系统主题索引。">
+  <title>阅读主题索引</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f1e8;
+      --paper: #fffdf8;
+      --ink: #25231f;
+      --muted: #716c62;
+      --line: #ddd5c7;
+      --accent: #8b2e25;
+      --soft: #f5e7e2;
+      --shadow: 0 16px 45px rgba(60, 45, 25, .08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    a { color: var(--accent); text-underline-offset: 3px; }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 22px 80px;
+    }
+
+    header {
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 26px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 7px 0 8px;
+      font-family: Georgia, "Songti SC", "STSong", serif;
+      font-size: clamp(38px, 7vw, 58px);
+      line-height: 1.12;
+    }
+
+    header p { max-width: 680px; margin: 0; color: var(--muted); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    nav a {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+
+    section {
+      scroll-margin-top: 20px;
+      margin: 0 0 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 24px 28px;
+    }
+
+    section:first-of-type {
+      background: linear-gradient(135deg, var(--soft), var(--paper) 55%);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-family: Georgia, "Songti SC", "STSong", serif;
+      font-size: 27px;
+    }
+
+    h3 {
+      margin: 18px 0 5px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    ul { margin: 7px 0; padding-left: 1.3em; }
+    li + li { margin-top: 5px; }
+
+    .back {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #191816;
+        --paper: #24221e;
+        --ink: #eee9df;
+        --muted: #b9b1a4;
+        --line: #474239;
+        --accent: #e58d82;
+        --soft: #3a2926;
+        --shadow: 0 16px 45px rgba(0, 0, 0, .18);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">Reading System</div>
+      <h1>主题索引</h1>
+      <p>把不同书籍和知识卡串成可以按问题调用的网络。主题不求全，先围绕反复阅读和笔记密集的方向生长。</p>
+    </header>
+
+    <nav aria-label="主题目录">
+      <a href="#antifragile">长期主义与反脆弱</a>
+      <a href="#business">经济、商业与组织</a>
+      <a href="#culture">文学、文化与表达</a>
+      <a href="#education">教育与学习</a>
+      <a href="#life">身心、觉察与人生哲学</a>
+    </nav>
+
+    <section id="antifragile">
+      <h2>长期主义与反脆弱</h2>
+      <h3>相关书</h3>
+      <ul>
+        <li>反脆弱：从不确定性中获益</li>
+        <li>穷查理宝典</li>
+        <li>第三次浪潮</li>
+        <li>The World After Capital</li>
+      </ul>
+      <h3>相关卡片</h3>
+      <ul>
+        <li><a href="../02-cards/antifragile-knowledge-cards.html#barbell">杠铃策略：锁住下行，保留上行</a></li>
+        <li><a href="../02-cards/antifragile-knowledge-cards.html#survival">否定法：先求生存，再谈优化</a></li>
+        <li><a href="../02-cards/antifragile-knowledge-cards.html#skin-in-game">切身利害：让决策者承担后果</a></li>
+        <li><a href="../02-cards/poor-charlies-knowledge-cards.html#multidisciplinary">多元思维模型：用多个基础原理共同检查问题</a></li>
+        <li><a href="../02-cards/poor-charlies-knowledge-cards.html#misjudgment">人类误判心理学：先检查大脑会怎样骗自己</a></li>
+      </ul>
+      <h3>可调用问题</h3>
+      <ul>
+        <li>面对不确定性时，哪些策略能让自己获益？</li>
+        <li>如何判断一个长期选择是否值得坚持？</li>
+      </ul>
+    </section>
+
+    <section id="business">
+      <h2>经济、商业与组织</h2>
+      <h3>相关书</h3>
+      <ul>
+        <li>分析与思考：黄奇帆的复旦经济课</li>
+        <li>美国增长的起落</li>
+        <li>影响商业的50本书</li>
+        <li>心生之境</li>
+        <li>穷查理宝典</li>
+      </ul>
+      <h3>相关卡片</h3>
+      <ul>
+        <li><a href="../02-cards/poor-charlies-knowledge-cards.html#misjudgment">人类误判心理学：先检查大脑会怎样骗自己</a></li>
+      </ul>
+      <h3>可调用问题</h3>
+      <ul>
+        <li>如何理解一个行业的长期增长来源？</li>
+        <li>一个组织的关键约束是什么？</li>
+        <li>激励机制和心理偏差会怎样扭曲组织判断？</li>
+      </ul>
+    </section>
+
+    <section id="culture">
+      <h2>文学、文化与表达</h2>
+      <h3>相关书</h3>
+      <ul>
+        <li>简明中国文学史</li>
+        <li>中国文化课</li>
+        <li>我们今天的现实就是超现实</li>
+        <li>阅读是安静的自我觉醒</li>
+      </ul>
+      <h3>可调用问题</h3>
+      <ul>
+        <li>如何把抽象感受变成具体表达？</li>
+        <li>某个文化现象背后有什么历史脉络？</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>教育与学习</h2>
+      <h3>相关书</h3>
+      <ul>
+        <li>美国语文读本2</li>
+        <li>美国语文读本3</li>
+        <li>教育的目的</li>
+        <li>学习可以很快乐</li>
+        <li>穷查理宝典</li>
+      </ul>
+      <h3>相关卡片</h3>
+      <ul>
+        <li><a href="../02-cards/poor-charlies-knowledge-cards.html#multidisciplinary">多元思维模型：用多个基础原理共同检查问题</a></li>
+      </ul>
+      <h3>可调用问题</h3>
+      <ul>
+        <li>学习的目标究竟是能力、人格还是自由？</li>
+        <li>如何设计更自然的学习路径？</li>
+        <li>如何把跨学科知识变成可调用的判断能力？</li>
+      </ul>
+    </section>
+
+    <section id="life">
+      <h2>身心、觉察与人生哲学</h2>
+      <h3>相关书</h3>
+      <ul>
+        <li>我可能错了</li>
+        <li>瑜伽经禅修要诀</li>
+        <li>能断金刚</li>
+        <li>活在此时此刻</li>
+        <li>穷查理宝典</li>
+      </ul>
+      <h3>相关卡片</h3>
+      <ul>
+        <li><a href="../02-cards/poor-charlies-knowledge-cards.html#misjudgment">人类误判心理学：先检查大脑会怎样骗自己</a></li>
+      </ul>
+      <h3>可调用问题</h3>
+      <ul>
+        <li>如何和焦虑、执念、错误共处？</li>
+        <li>哪些练习能帮助我回到当下？</li>
+        <li>我现在是在依据证据判断，还是在为情绪找理由？</li>
+      </ul>
+    </section>
+
+    <a class="back" href="../02-cards/antifragile-knowledge-cards.html">← 返回《反脆弱》知识卡</a>
+  </main>
+</body>
+</html>

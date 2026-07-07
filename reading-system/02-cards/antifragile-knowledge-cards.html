@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="《反脆弱》知识卡：杠铃策略、否定法与生存优先、切身利害与责任。">
+  <title>《反脆弱》知识卡</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f1e8;
+      --paper: #fffdf8;
+      --ink: #25231f;
+      --muted: #716c62;
+      --line: #ddd5c7;
+      --accent: #8b2e25;
+      --accent-soft: #f5e7e2;
+      --gold: #a6752c;
+      --gold-soft: #fbf1dc;
+      --shadow: 0 18px 50px rgba(60, 45, 25, .08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top right, rgba(166, 117, 44, .10), transparent 32rem),
+        var(--bg);
+      color: var(--ink);
+      font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    a { color: var(--accent); text-underline-offset: 3px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 820px);
+      gap: 40px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 28px 80px;
+    }
+
+    .side {
+      position: sticky;
+      top: 28px;
+      align-self: start;
+    }
+
+    .brand {
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    nav a {
+      border-left: 2px solid var(--line);
+      padding: 8px 12px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .side-note {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main { min-width: 0; }
+
+    .hero {
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 32px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 8px 0 10px;
+      font-family: Georgia, "Songti SC", "STSong", serif;
+      font-size: clamp(38px, 7vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--paper) 82%, transparent);
+      padding: 4px 11px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .overview a {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .overview strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+
+    .overview span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card {
+      scroll-margin-top: 28px;
+      margin: 0 0 32px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-head {
+      border-bottom: 1px solid var(--line);
+      padding: 28px 32px 24px;
+      background: linear-gradient(135deg, var(--accent-soft), transparent 58%);
+    }
+
+    .number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    h2 {
+      margin: 6px 0 8px;
+      font-family: Georgia, "Songti SC", "STSong", serif;
+      font-size: clamp(27px, 5vw, 38px);
+      line-height: 1.25;
+    }
+
+    .thesis {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .card-body { padding: 10px 32px 32px; }
+
+    h3 {
+      margin: 24px 0 10px;
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    blockquote {
+      margin: 14px 0;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      background: var(--gold-soft);
+      padding: 15px 18px;
+      font-family: Georgia, "Songti SC", "STSong", serif;
+      font-size: 17px;
+    }
+
+    .insight {
+      border-radius: 12px;
+      background: var(--accent-soft);
+      padding: 16px 18px;
+    }
+
+    ol, ul { padding-left: 1.35em; }
+    li + li { margin-top: 7px; }
+
+    .question {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 15px 18px;
+      font-weight: 700;
+    }
+
+    .question::before {
+      content: "调用问题";
+      display: block;
+      margin-bottom: 5px;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: .1em;
+    }
+
+    .boundary {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .top-link { display: none; }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #191816;
+        --paper: #24221e;
+        --ink: #eee9df;
+        --muted: #b9b1a4;
+        --line: #474239;
+        --accent: #e58d82;
+        --accent-soft: #3a2926;
+        --gold: #d5aa65;
+        --gold-soft: #393022;
+        --shadow: 0 18px 50px rgba(0, 0, 0, .18);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .layout { grid-template-columns: 1fr; padding: 24px 18px 60px; }
+      .side { position: static; }
+      .brand { margin-bottom: 10px; }
+      nav { grid-template-columns: repeat(3, 1fr); }
+      nav a { border: 1px solid var(--line); border-radius: 8px; padding: 8px; text-align: center; }
+      .side-note { display: none; }
+      .overview { grid-template-columns: 1fr; }
+      .card-head, .card-body { padding-left: 20px; padding-right: 20px; }
+      .top-link { display: inline-block; margin-top: 14px; font-size: 13px; }
+    }
+
+    @media print {
+      :root { color-scheme: light; }
+      body { background: #fff; }
+      .layout { display: block; max-width: none; padding: 0; }
+      .side, .overview { display: none; }
+      .hero { margin-bottom: 20px; }
+      .card { break-inside: avoid; box-shadow: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="layout">
+    <aside class="side" aria-label="页面目录">
+      <div class="brand">Reading System</div>
+      <nav>
+        <a href="#barbell">杠铃策略</a>
+        <a href="#survival">否定法</a>
+        <a href="#skin-in-game">切身利害</a>
+      </nav>
+      <p class="side-note">三张卡形成一个决策顺序：先避免出局，再设计不对称收益，最后检查谁承担后果。</p>
+    </aside>
+
+    <main>
+      <header class="hero">
+        <div class="eyebrow">Knowledge Cards · Antifragile</div>
+        <h1>《反脆弱》知识卡</h1>
+        <p class="subtitle">在不可预测的世界里，不押注预测准确，而是守住生存、保留上行，并让权力与责任重新站到一起。</p>
+        <div class="meta">
+          <span class="pill">作者：纳西姆·尼古拉斯·塔勒布</span>
+          <span class="pill">bookId：635942</span>
+          <span class="pill">提炼日期：2026-06-22</span>
+        </div>
+      </header>
+
+      <section class="overview" aria-label="三张卡概览">
+        <a href="#barbell"><strong>01 · 结构</strong><span>锁住下行，保留上行</span></a>
+        <a href="#survival"><strong>02 · 顺序</strong><span>先求生存，再谈优化</span></a>
+        <a href="#skin-in-game"><strong>03 · 伦理</strong><span>让决策者承担后果</span></a>
+      </section>
+
+      <article class="card" id="barbell">
+        <header class="card-head">
+          <div class="number">CARD 01 · 方法卡</div>
+          <h2>杠铃策略：锁住下行，保留上行</h2>
+          <p class="thesis">用结构应对不确定性：安全端保障生存，探索端承受有限损失、开放巨大上行。</p>
+        </header>
+        <div class="card-body">
+          <h3>原始材料</h3>
+          <blockquote>“杠铃策略可以指任何由截然不同的两类方案组成，并且摈弃了模棱两可的中间路线的策略，它往往会形成一种有利的不对称性。”</blockquote>
+          <blockquote>“金融杠铃策略的最大损失是已知的。”</blockquote>
+
+          <h3>核心理解</h3>
+          <p class="insight">杠铃策略不是准确预测未来，也不是平均分散风险。大部分资源放在足以保障生存的安全端，小部分资源投入即使全部损失也承受得起、却可能带来巨大收益的探索端。它避开的是看似稳妥、实则可能藏着尾部风险的“中间地带”。</p>
+
+          <h3>行动规则</h3>
+          <ol>
+            <li>先定义什么损失会让我出局，用现金、冗余、稳定收入或安全边界守住它。</li>
+            <li>把可承受损失的资源拆成多个低成本、可独立失败的试验。</li>
+            <li>让试验的下行有上限、上行尽量开放，并保留继续、加码或退出的选择权。</li>
+            <li>不因短期平稳误把中间方案当安全，检查其中是否藏着一次性的大额损失。</li>
+          </ol>
+
+          <h3>适用场景</h3>
+          <ul>
+            <li>设计投资、职业、学习和创新组合。</li>
+            <li>在信息不足时决定做小试验，还是押注单一路径。</li>
+            <li>审查一个“稳健方案”是否暗藏无法承受的尾部风险。</li>
+          </ul>
+
+          <p class="boundary"><strong>边界：</strong>杠铃不是鼓励鲁莽冒险，也没有固定的两端比例。如果探索端的失败彼此高度相关，或总损失足以伤到安全端，它就不再是杠铃。</p>
+          <div class="question">最坏结果是否已知且可承受？如果失败有限，成功的上行是否仍然开放？</div>
+          <a class="top-link" href="#top">返回顶部 ↑</a>
+        </div>
+      </article>
+
+      <article class="card" id="survival">
+        <header class="card-head">
+          <div class="number">CARD 02 · 方法卡</div>
+          <h2>否定法：先求生存，再谈优化</h2>
+          <p class="thesis">一次致命损失足以清空此前所有正确判断；先排除出局风险，才有长期复利。</p>
+        </header>
+        <div class="card-body">
+          <h3>原始材料</h3>
+          <blockquote>“下棋高手通常通过不输棋而取胜；人们通过避免破产而致富……生活的经验主要是关于我们应该避开什么事。”</blockquote>
+
+          <h3>核心理解</h3>
+          <p class="insight">生存不是众多目标中的一个，而是所有长期收益的前提。面对复杂和不可预测的问题，先删除会导致出局的行为，通常比直接寻找最优解更可靠。否定法不是消极保守，而是先清掉脆弱性，再为试错和复利腾出空间。</p>
+
+          <h3>行动规则</h3>
+          <ol>
+            <li>先做“出局检查”：什么会造成破产、永久伤害、信誉归零或失去继续选择的能力？</li>
+            <li>把这些结果写成禁区、硬上限或停止条件，不留给临场判断。</li>
+            <li>优先移除单点依赖、过度杠杆、不可逆承诺，以及收益有限但损失无上限的安排。</li>
+            <li>守住生存线后，再在可逆、可承受的小错误中学习和优化。</li>
+          </ol>
+
+          <h3>适用场景</h3>
+          <ul>
+            <li>投资、创业、健康、职业等高后果决策前的风险筛查。</li>
+            <li>为团队制定红线、停止条件和事故预案。</li>
+            <li>当方案很多、预测不可靠时，用排除法缩小选择空间。</li>
+          </ul>
+
+          <p class="boundary"><strong>边界：</strong>否定法禁止的是致命错误，不是所有错误。若为了“绝不犯错”而消灭小规模试验，反而会失去反馈，积累更大的脆弱性。</p>
+          <div class="question">哪一种失败会让我无法继续参与？现在能否先把它排除？</div>
+          <a class="top-link" href="#top">返回顶部 ↑</a>
+        </div>
+      </article>
+
+      <article class="card" id="skin-in-game">
+        <header class="card-head">
+          <div class="number">CARD 03 · 观点卡</div>
+          <h2>切身利害：让决策者承担后果</h2>
+          <p class="thesis">建议是否可信，不只取决于论证，还取决于提出建议的人是否暴露在后果之中。</p>
+        </header>
+        <div class="card-body">
+          <h3>原始材料</h3>
+          <blockquote>“人们应该依据自己的信念采取行动，而不是根据行动选择自己的信念。”</blockquote>
+          <blockquote>“英雄主义以及它所赢得的尊重是社会对于那些为了他人而承担风险的人所做出的一种补偿。”</blockquote>
+
+          <h3>核心理解</h3>
+          <p class="insight">判断一项建议、制度或决策是否值得信任，不能只看论证是否漂亮，还要看收益、权力和后果是否落在同一批人身上。如果决策者获得奖金、声望或上行收益，却能把失败成本转给客户、员工或社会，系统就会奖励冒险并积累脆弱性。</p>
+
+          <h3>检查清单</h3>
+          <ol>
+            <li>谁提出并批准决策？谁获得主要收益？</li>
+            <li>最坏结果由谁承担，决策者能否在后果出现前退出？</li>
+            <li>决策者是否投入了资本、信誉、时间或职业责任等真实筹码？</li>
+            <li>是否有追责、回拨、赔偿或长期跟踪机制，让责任不会随职位或项目结束而消失？</li>
+          </ol>
+
+          <h3>适用场景</h3>
+          <ul>
+            <li>评估专家建议、管理制度、激励方案和外包关系是否可信。</li>
+            <li>设计奖金、授权、问责和风险共担机制。</li>
+            <li>在合作前识别“拿走上行、转嫁下行”的代理问题。</li>
+          </ul>
+
+          <p class="boundary"><strong>边界：</strong>切身利害不要求所有人承担完全相同的风险，也不排斥专家分工。关键是风险转移必须透明，决策权与责任不能长期分离。</p>
+          <div class="question">如果这个判断错了，做决定的人会失去什么？</div>
+          <a class="top-link" href="#top">返回顶部 ↑</a>
+        </div>
+      </article>
+
+      <footer>
+        <p>来源：《反脆弱：从不确定性中获益》阅读回访。<a href="../01-reviews/antifragile-review.html" target="_blank" rel="noopener">查看完整回访</a> · <a href="../03-topics/topic-index.html" target="_blank" rel="noopener">查看主题索引</a> · <a href="../index.html">返回书架首页</a></p>
+        <p>这三张卡可连成一个决策顺序：<strong>先避免出局 → 再保留下行有限、上行开放的选择 → 最后检查权力与责任是否对齐。</strong></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
